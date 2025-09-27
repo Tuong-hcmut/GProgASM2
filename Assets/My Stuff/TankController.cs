@@ -3,6 +3,8 @@ using UnityEngine.InputSystem; // New Input System
 
 public class TankController : MonoBehaviour
 {
+    public Transform currentTank;
+
     [Header("Movement Settings")]
     public float moveSpeed = 5f;      // conventional: movement speed
     public float rotationSpeed = 180f; // conventional: degrees per second

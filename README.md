@@ -1,2 +1,0 @@
-# GProgASM2
-Gayming

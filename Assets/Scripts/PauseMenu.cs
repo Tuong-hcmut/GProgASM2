@@ -14,6 +14,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject BoostText1;
     public GameObject BoostText2;
     public GameObject time;
+    public GameObject goal;
 
 
     private bool isPaused = false;
@@ -35,7 +36,7 @@ public class PauseMenu : MonoBehaviour
         settingMenuPanel.SetActive(false);
 
         // bật lại map khi resume (nếu có)
-        if (mapCanvas != null) 
+        if (mapCanvas != null)
             mapCanvas.SetActive(true);
         if (ScoreText1 != null)
             ScoreText1.SetActive(true);
@@ -46,9 +47,11 @@ public class PauseMenu : MonoBehaviour
         if (BoostText2 != null)
             BoostText2.SetActive(true);
         if (time != null)
-                time.SetActive(true);
+            time.SetActive(true);
+        if (goal != null)
+            goal.SetActive(true);
 
-        Time.timeScale = 1f; 
+        Time.timeScale = 1f;
         isPaused = false;
     }
 
@@ -57,7 +60,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuPanel.SetActive(true);
 
         // tắt map khi pause (nếu có)
-        if (mapCanvas != null) 
+        if (mapCanvas != null)
             mapCanvas.SetActive(false);
         if (ScoreText1 != null)
             ScoreText1.SetActive(false);
@@ -69,9 +72,11 @@ public class PauseMenu : MonoBehaviour
             BoostText2.SetActive(false);
         if (time != null)
             time.SetActive(false);
+        if (goal != null)
+            goal.SetActive(false);
 
 
-        Time.timeScale = 0f; 
+        Time.timeScale = 0f;
         isPaused = true;
     }
 

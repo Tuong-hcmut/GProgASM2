@@ -1246,7 +1246,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4278196223
-  m_fontColor: {r: 1, g: 0.0902453, b: 0, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1263,15 +1263,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 112
+  m_fontSizeBase: 112
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1332,7 +1332,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 1000, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &184766631 stripped
 GameObject:
@@ -8250,7 +8250,6 @@ GameObject:
   m_Component:
   - component: {fileID: 600097820}
   - component: {fileID: 600097818}
-  - component: {fileID: 600097819}
   m_Layer: 0
   m_Name: Game_Manager
   m_TagString: Untagged
@@ -8298,25 +8297,6 @@ MonoBehaviour:
   BoostText1: {fileID: 41663861}
   BoostText2: {fileID: 1546277003}
   time: {fileID: 456725843}
---- !u!114 &600097819
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 600097817}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d47706cb64199ba4d9361d5eb7cee0b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BallOutManager
-  player1: {fileID: 1380280972}
-  player2: {fileID: 2035283106}
-  playArea: {fileID: 1400739741}
-  fieldCenter: {fileID: 1680884649}
-  playerPlaceOffset: 1
-  insidePadding: 0.3
-  outCooldown: 0.3
 --- !u!4 &600097820
 Transform:
   m_ObjectHideFlags: 0
@@ -9179,7 +9159,6 @@ GameObject:
   - component: {fileID: 803218267}
   - component: {fileID: 803218266}
   - component: {fileID: 803218265}
-  - component: {fileID: 803218264}
   - component: {fileID: 803218263}
   m_Layer: 0
   m_Name: Main Camera
@@ -9236,20 +9215,6 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
---- !u!114 &803218264
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 803218261}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9eb6df58988c01a42aa86aefca4a8347, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CameraFollowClamp2D
-  target: {fileID: 633574956}
-  playAreaObject: {fileID: 1400739743}
 --- !u!114 &803218265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10521,7 +10486,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1084841407}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb13b7da3b41a4346852b0f559e569d0, type: 3}
   m_Name: 
@@ -11216,7 +11181,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1308504967}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb13b7da3b41a4346852b0f559e569d0, type: 3}
   m_Name: 
@@ -13833,12 +13798,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PauseMenu
   pauseMenuPanel: {fileID: 1382965284}
   settingMenuPanel: {fileID: 1204717141}
-  mapCanvas: {fileID: 0}
-  ScoreText1: {fileID: 0}
-  ScoreText2: {fileID: 0}
-  BoostText1: {fileID: 0}
-  BoostText2: {fileID: 0}
-  time: {fileID: 0}
+  mapCanvas: {fileID: 2103925496}
+  ScoreText1: {fileID: 647555904}
+  ScoreText2: {fileID: 548426909}
+  BoostText1: {fileID: 41663861}
+  BoostText2: {fileID: 1546277003}
+  time: {fileID: 456725843}
+  goal: {fileID: 0}
 --- !u!114 &1714061788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15181,6 +15147,7 @@ MonoBehaviour:
   BoostText1: {fileID: 41663861}
   BoostText2: {fileID: 1546277003}
   time: {fileID: 456725843}
+  goal: {fileID: 0}
 --- !u!4 &2042808334
 Transform:
   m_ObjectHideFlags: 0

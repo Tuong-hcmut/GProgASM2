@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 public enum GameState
 {
     Playing,
@@ -58,6 +60,19 @@ public class GameManager : MonoBehaviour
     private float timer;
     private HUDManager hud;
 
+    [Header("UI GameOver Popup")]
+    public GameObject gameOverPopup;
+    public TextMeshProUGUI resultText;
+    public TextMeshProUGUI scoreText;
+    public GameObject playAgain;
+    public GameObject mainMenu;
+    [Header("Optional UI Elements")]
+    public GameObject mapCanvas;
+    public GameObject ScoreText1;
+    public GameObject ScoreText2;
+    public GameObject BoostText1;
+    public GameObject BoostText2;
+    public GameObject time;
     private void Awake()
     {
         if (Instance == null) Instance = this;
@@ -125,6 +140,14 @@ public class GameManager : MonoBehaviour
             if (player2Indicator != null) player2Indicator.gameObject.SetActive(true);
         }
 
+        if (playAgain != null)
+            playAgain.GetComponent<Button>().onClick.AddListener(OnPlayAgain);
+        if (mainMenu != null)
+            mainMenu.GetComponent<Button>().onClick.AddListener(OnMainMenu);
+
+        if (gameOverPopup != null)
+            gameOverPopup.SetActive(false);
+        // Đặt xe và bóng về vị trí ban đầu khi game bắt đầu
         ResetPositions();
         currentState = GameState.Playing;
         timer = matchTime;
@@ -146,12 +169,14 @@ public class GameManager : MonoBehaviour
 
         if (gameMode == GameMode.TwoPlayerTeam && keyboard[enterKey].wasPressedThisFrame)
             TrySwapCar(ref player2, true);
-
-        timer -= Time.deltaTime;
-        if (timer <= 0f)
+        if (currentState == GameState.Playing)
         {
-            timer = 0f;
-            SetState(GameState.GameOver);
+            timer -= Time.deltaTime;
+            if (timer <= 0f)
+            {
+                timer = 0f;
+                SetState(GameState.GameOver);
+            }
         }
     }
 
@@ -227,21 +252,26 @@ public class GameManager : MonoBehaviour
         newPlayerCtrl.controlledByPlayer = isPlayer2 ? 2 : 1;
         if (newAICtrl != null) newAICtrl.enabled = false;
 
-        // --- update reference ---
+        // --- Update reference in GameManager ---
         currentPlayerRef = newCar;
         if (isPlayer2) player2 = newCar;
         else player1 = newCar;
 
-        // --- update indicator ---
+        // --- Update indicator target ---
         DirectionIndicator indicator = isPlayer2 ? player2Indicator : player1Indicator;
         if (indicator != null)
         {
             indicator.SetTarget(newCar.transform);
             indicator.gameObject.SetActive(true);
+            Debug.Log($"Indicator for Player {(isPlayer2 ? 2 : 1)} updated to {newCar.name}");
         }
 
+        // --- Trigger HUD refresh ---
         if (hud != null)
             hud.UpdateHUD();
+
+        // Extra feedback
+        Debug.Log($"Player {(isPlayer2 ? 2 : 1)} now controls {newCar.name}");
     }
 
     public void AddScore(int playerNumber)
@@ -257,7 +287,10 @@ public class GameManager : MonoBehaviour
             SetState(GameState.GoalScored);
     }
 
-    public float GetTimeRemaining() => timer;
+    public float GetTimeRemaining()
+    {
+        return timer;
+    }
 
     public void SetState(GameState newState)
     {
@@ -286,17 +319,64 @@ public class GameManager : MonoBehaviour
             case GameState.GoalScored:
                 ResetPositions();
                 break;
-
             case GameState.Paused:
                 Time.timeScale = 0f;
                 break;
-
             case GameState.GameOver:
                 Debug.Log("Game Over!");
+                ShowGameOverPopup();
                 break;
         }
     }
 
+    private void ShowGameOverPopup()
+    {
+        if (gameOverPopup == null) return;
+        Time.timeScale = 0f;
+        gameOverPopup.SetActive(true);
+        if (scoreText != null)
+            scoreText.text = player1Score + " - " + player2Score;
+        if (resultText != null)
+        {
+            if (player1Score > player2Score)
+                resultText.text = "Player 1 won!";
+            else if (player2Score > player1Score)
+            {
+                if (player2.CompareTag("AI"))
+                {
+                    resultText.text = "AI won!";
+                }
+                else if (player2.CompareTag("Player2"))
+                {
+                    resultText.text = "Player2 won!";
+                }
+            }
+        }
+        if (mapCanvas != null)
+            mapCanvas.SetActive(false);
+        if (ScoreText1 != null)
+            ScoreText1.SetActive(false);
+        if (ScoreText2 != null)
+            ScoreText2.SetActive(false);
+        if (BoostText1 != null)
+            BoostText1.SetActive(false);
+        if (BoostText2 != null)
+            BoostText2.SetActive(false);
+        if (time != null)
+            time.SetActive(false);
+
+    }
+    public void OnPlayAgain()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void OnMainMenu()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Main Menu Scene");
+    }
     public void ResetPositions()
     {
         player1.transform.position = player1StartPos;
@@ -323,7 +403,6 @@ public class GameManager : MonoBehaviour
             rb2d.angularVelocity = 0f;
             return;
         }
-
         Rigidbody rb = obj.GetComponent<Rigidbody>();
         if (rb != null)
         {

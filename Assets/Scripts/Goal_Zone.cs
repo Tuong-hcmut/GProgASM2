@@ -1,5 +1,7 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
+using System.Collections.Generic;
 
 public class Goal_Zone : MonoBehaviour
 {
@@ -15,12 +17,20 @@ public class Goal_Zone : MonoBehaviour
 
     [Header("Who Scores?")]
     public int scoringPlayerNumber = 1; // 1 or 2 depending on which goal this is
+    private Dictionary<GameObject, Vector3> aiStartPositions = new Dictionary<GameObject, Vector3>();
 
     void Start()
     {
         ballStartPos = ball.position;
         player1StartPos = player1.position;
         player2StartPos = player2.position;
+
+
+        GameObject[] allAIs = GameObject.FindGameObjectsWithTag("AI");
+        foreach (var ai in allAIs)
+        {
+            aiStartPositions[ai] = ai.transform.position;
+        }
 
         if (goalText != null)
             goalText.gameObject.SetActive(false);
@@ -30,11 +40,33 @@ public class Goal_Zone : MonoBehaviour
     {
         if (other.CompareTag("Ball"))
         {
-            // Call GameManager to add score
             GameManager.Instance?.AddScore(scoringPlayerNumber);
+            ShowGoalText();
+            StartCoroutine(ResetPositionsAfterGoal());
+        }
+    }
 
-            ShowGoalText();   // Show "GOAL" UI
-            ResetPositions();
+    IEnumerator ResetPositionsAfterGoal()
+    {
+        ResetPositions();
+
+
+        GameObject[] allAIs = GameObject.FindGameObjectsWithTag("AI");
+        foreach (var ai in allAIs)
+        {
+            AIController aiCtrl = ai.GetComponent<AIController>();
+            if (aiCtrl != null)
+                aiCtrl.enabled = false;
+        }
+
+        yield return new WaitForSeconds(2f); // đợi 2 giây
+
+
+        foreach (var ai in allAIs)
+        {
+            AIController aiCtrl = ai.GetComponent<AIController>();
+            if (aiCtrl != null)
+                aiCtrl.enabled = true;
         }
     }
 
@@ -58,7 +90,6 @@ public class Goal_Zone : MonoBehaviour
 
     void ResetPositions()
     {
-        // Reset ball
         ball.position = ballStartPos;
         Rigidbody2D rbBall = ball.GetComponent<Rigidbody2D>();
         if (rbBall != null)
@@ -67,22 +98,27 @@ public class Goal_Zone : MonoBehaviour
             rbBall.angularVelocity = 0f;
         }
 
-        // Reset player 1
-        player1.position = player1StartPos;
-        Rigidbody2D rb1 = player1.GetComponent<Rigidbody2D>();
-        if (rb1 != null)
-        {
-            rb1.linearVelocity = Vector2.zero;
-            rb1.angularVelocity = 0f;
-        }
+        ResetObject(player1, player1StartPos);
+        ResetObject(player2, player2StartPos);
 
-        // Reset player 2
-        player2.position = player2StartPos;
-        Rigidbody2D rb2 = player2.GetComponent<Rigidbody2D>();
-        if (rb2 != null)
+
+        foreach (var kvp in aiStartPositions)
         {
-            rb2.linearVelocity = Vector2.zero;
-            rb2.angularVelocity = 0f;
+            if (kvp.Key != null)
+                ResetObject(kvp.Key.transform, kvp.Value);
+        }
+    }
+
+    void ResetObject(Transform obj, Vector3 startPos)
+    {
+        obj.position = startPos;
+        obj.rotation = Quaternion.identity;
+
+        var rb = obj.GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            rb.linearVelocity = Vector2.zero;
+            rb.angularVelocity = 0f;
         }
     }
 }

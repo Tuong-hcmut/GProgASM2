@@ -107,6 +107,3 @@ You can also modify the boost collectible prefab or arena layout directly in the
 - **Hit sound effect:** “Vehicle Collision Impact”  
   Included in the same pack — *Vehicle Essentials (Unity Asset Store)*  
   Source: [https://assetstore.unity.com/packages/audio/sound-fx/transportation/vehicle-essentials-194951](https://assetstore.unity.com/packages/audio/sound-fx/transportation/vehicle-essentials-194951)
-- Other User Interface assets: 
-Original author: 
-Source: 

@@ -61,40 +61,40 @@ You can also modify the boost collectible prefab or arena layout directly in the
 
 | Player | Action | Keys |
 | --- | --- | --- |
-| **Player 1** | Move Forward / Backward | **W / S** |
-|  | Turn Left / Right | **A / D** |
+| **Player 1** | Move Forward / Backward | **A / D** |
+|  | Turn Left / Right | **W / S** |
 |  | Boost | **Left Shift** |
 |  | Swap Car | **Tab** |
-| **Player 2** | Move Forward / Backward | **↑ / ↓** |
-|  | Turn Left / Right | **← / →** |
+| **Player 2** | Move Forward / Backward | **← / →** |
+|  | Turn Left / Right | **↑ / ↓** |
 |  | Boost | **Right Shift** |
 |  | Swap Car | **Enter** |
 
 ## References
-- Background music: Plants vs Zombies "LoonBloon"
-Original author: Electronic Arts, PopCap Games
-Source: https://downloads.khinsider.com/game-soundtracks/album/plants-vs.-zombies
+- Background music: 
+Original author: 
+Source: 
 
-- Hit sfx: Plants vs Zombies "Hammer Strike"
-Original author: Electronic Arts, PopCap Games
-Source: https://downloads.khinsider.com/game-soundtracks/album/plants-vs.-zombies-2009-gamerip-pc-ios-x360-ps3-ds-android-mobile-psvita-xbox-one-ps4-switch
+- Hit sfx: 
+Original author: 
+Source: 
 
-- Hit vfx: "GIF Free Pixel Effects Pack #5 - Blood Effects"
-Original author: XYezawr
-Source: https://xyezawr.itch.io/gif-free-pixel-effects-pack-5-blood-effects
+- Hit vfx: 
+Original author: 
+Source:
 
-- Background assets: "Rogue Fantasy Catacomb" title set.
-Original author: Szadi art.
-Source: https://szadiart.itch.io/rogue-fantasy-catacombs
+- Background assets: 
+Original author: 
+Source: 
 
-- Zombie sprite: "Zombie - simple, becomes projectile"
-Original author: IronnButterfly
-Source: https://ironnbutterfly.itch.io/zombie-sprite
+- Ball sprite
+Original author: gothicfan95
+Source: https://opengameart.org/content/soccer-ball
 
-- Main User Interface assets: "UI User Interface Pack - Horror"
-Original author: ToffeeCraft
-Source: https://toffeecraft.itch.io/ui-user-interface-pack-horror
+- Main User Interface assets: 
+Original author: 
+Source: 
 
-- Other User Interface assets: "Pixel Hammer"
-Original author: szak
-Source: https://en.ac-illust.com/clip-art/26388255/pixel-hammer
+- Other User Interface assets: 
+Original author: 
+Source: 

@@ -33,5 +33,12 @@ public class DirectionIndicator : MonoBehaviour
         float distance = UnityEngine.Vector2.Distance(transform.position, target.position) * distanceMultiplier;
 
         distanceText.SetText(Mathf.RoundToInt(distance) + "m");
+
+        distanceText.transform.rotation = UnityEngine.Quaternion.Euler(0f, 0f, 0f);
     }
+    public void SetTarget(Transform newTarget)
+    {
+        target = newTarget;
+    }
+
 }

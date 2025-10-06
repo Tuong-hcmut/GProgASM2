@@ -3,8 +3,7 @@ using UnityEngine;
 public class Music_Manager : MonoBehaviour
 {
     public AudioSource bgmSource;
-    public AudioClip[] tracks;  
-    private int currentIndex = 0;
+    public AudioClip[] tracks;
 
     void Start()
     {

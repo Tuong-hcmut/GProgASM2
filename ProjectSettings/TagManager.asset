@@ -7,6 +7,12 @@ TagManager:
   - Collectible
   - AI
   - Ball
+  - Ground
+  - Player1
+  - Player2
+  - AI1
+  - AI2
+  - PlayArea
   layers:
   - Default
   - TransparentFX

@@ -8271,7 +8271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   currentState: 0
-  gameMode: 0
+  gameMode: 1
   player1: {fileID: 1380280967}
   player2: {fileID: 184766631}
   ball: {fileID: 633574955}

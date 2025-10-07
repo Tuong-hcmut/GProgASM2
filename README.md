@@ -80,9 +80,9 @@ You can also modify the boost collectible prefab or arena layout directly in the
   Original author: [opengameart.org contributor](https://opengameart.org/users/)  
   Source: [https://opengameart.org/content/football-pitch](https://opengameart.org/content/football-pitch)
 
-- **Car sprite:** “Red Car Top Down”  
-  Original author: [kenney.nl](https://kenney.nl/)  
-  Source: [https://opengameart.org/content/red-car-top-down](https://opengameart.org/content/red-car-top-down)
+- **Car sprite:** “Top Down Car Sprite Packs 1.0”  
+  Original author: [https://tokka.itch.io/](https://kenney.nl/)  
+  Source: ([https://opengameart.org/content/red-car-top-down](https://tokka.itch.io/top-down-car))
 
 - **Boost / HUD icon**: “Game Booster Icon”  
   Source: IconScout — Free game booster icons  

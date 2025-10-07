@@ -72,38 +72,64 @@ You can also modify the boost collectible prefab or arena layout directly in the
 
 ## References
 
-- **Ball asset:** “Soccer Ball”  
-  Original author: [Uncle_Sporky](https://opengameart.org/users/unclesporky)  
-  Source: [https://opengameart.org/content/soccer-ball](https://opengameart.org/content/soccer-ball)
+## Credit
 
-- **Background (Football Field):** “Football Pitch”  
-  Original author: [opengameart.org contributor](https://opengameart.org/users/)  
+- **Background (Main Menu):** “Gradient Football Field Background”  
+  Original author: Freepik  
+  Source: [https://www.freepik.com/free-vector/gradient-football-field-background_15510117.htm](https://www.freepik.com/free-vector/gradient-football-field-background_15510117.htm)
+
+- **Background (Football Pitch In-Game):** “Football Pitch”  
+  Original author: OpenGameArt  
   Source: [https://opengameart.org/content/football-pitch](https://opengameart.org/content/football-pitch)
 
-- **Car sprite:** “Top Down Car Sprite Packs 1.0”  
-  Original author: [https://tokka.itch.io/](https://kenney.nl/)  
-  Source: ([https://opengameart.org/content/red-car-top-down](https://tokka.itch.io/top-down-car))
+- **Ball Sprite:** “Soccer Ball Isolated”  
+  Original author: Freepik  
+  Source: [https://www.freepik.com/free-psd/soccer-ball-isolated_170707140.htm](https://www.freepik.com/free-psd/soccer-ball-isolated_170707140.htm)
 
-- **Boost / HUD icon**: “Game Booster Icon”  
-  Source: IconScout — Free game booster icons  
-  URL: https://iconscout.com/icons/game-booster
+- **Car Sprite:** “Red Car Top Down”  
+  Original author: OpenGameArt  
+  Source: [https://opengameart.org/content/red-car-top-down](https://opengameart.org/content/red-car-top-down)
 
-- **UI / HUD icons pack**: “Game UI Icons”  
-  Source: Flaticon — Game UI icons collection  
-  URL: https://www.flaticon.com/free-icons/game-ui
+- **Car (Background Art):** “Rocket League Car”  
+  Original author: PNGWing  
+  Source: [https://w7.pngwing.com/pngs/659/872/png-transparent-supersonic-acrobatic-rocket-powered-battle-cars-rocket-league-vehicle-playstation-4-rocket-league-car-mode-of-transport-transport.png](https://w7.pngwing.com/pngs/659/872/png-transparent-supersonic-acrobatic-rocket-powered-battle-cars-rocket-league-vehicle-playstation-4-rocket-league-car-mode-of-transport-transport.png)
 
-- **HUD / UI elements / icons**: free UI assets from itch.io  
-  Source: itch.io — HUD tag assets  
-  URL: https://itch.io/game-assets/free/tag-hud
+- **PvP Mode Icon:** “Player Versus Player”  
+  Original author: Flaticon  
+  Source: [https://www.flaticon.com/free-icon/player-versus-player_4099372](https://www.flaticon.com/free-icon/player-versus-player_4099372)
 
-- **Booster pad / fuel can sprite**: fuel / gas sprites from community assets  
-  Source: itch.io — fuel tag  
-  URL: https://itch.io/game-assets/tag-fuel  
+- **PvE Mode Icon:** “Computer Icon”  
+  Original author: Flaticon  
+  Source: [https://www.flaticon.com/free-icon/computer_2736270](https://www.flaticon.com/free-icon/computer_2736270)
 
-- **Background music:** “Vehicle Essentials - Engine and Racing Sounds Pack”  
-  Original author: [SoundFellas Immersive Audio Labs](https://soundfellas.com/)  
-  Source: [https://assetstore.unity.com/packages/audio/sound-fx/transportation/vehicle-essentials-194951](https://assetstore.unity.com/packages/audio/sound-fx/transportation/vehicle-essentials-194951)
+- **Booster Pad Sprite:** “Fuel Can Sprite”  
+  Original author: itch.io Asset Library  
+  Source: [https://itch.io/game-assets/tag-fuel](https://itch.io/game-assets/tag-fuel)
 
-- **Hit sound effect:** “Vehicle Collision Impact”  
-  Included in the same pack — *Vehicle Essentials (Unity Asset Store)*  
+- **HUD / UI Icons:** “Game UI Icons Collection”  
+  Original author: Flaticon  
+  Source: [https://www.flaticon.com/free-icons/game-ui](https://www.flaticon.com/free-icons/game-ui)
+
+- **Close Button Icon:** “Close Icon”  
+  Original author: Flaticon  
+  Source: [https://www.flaticon.com/free-icon/close_9068699](https://www.flaticon.com/free-icon/close_9068699)
+
+- **Right Arrow Button:** “Right Arrow”  
+  Original author: Flaticon  
+  Source: [https://www.flaticon.com/free-icon/right-arrow_5974717](https://www.flaticon.com/free-icon/right-arrow_5974717)
+
+- **Left Arrow Button:** “Left Arrow”  
+  Original author: Flaticon  
+  Source: [https://www.flaticon.com/free-icon/left-arrow_5974708](https://www.flaticon.com/free-icon/left-arrow_5974708)
+
+- **Background Music (Main Stadium Theme):** “Football Soccer Stadium Background Music”  
+  Original author: Pixabay  
+  Source: [https://pixabay.com/music/action-football-soccer-stadium-background-music-391976/](https://pixabay.com/music/action-football-soccer-stadium-background-music-391976/)
+
+- **Background Music (Alternative):** “Football Soccer Stadium Background Music 2”  
+  Original author: Pixabay  
+  Source: [https://pixabay.com/music/action-football-soccer-stadium-background-music-349316/](https://pixabay.com/music/action-football-soccer-stadium-background-music-349316/)
+
+- **Vehicle Sound Effects:** “Vehicle Essentials”  
+  Original author: Unity Asset Store  
   Source: [https://assetstore.unity.com/packages/audio/sound-fx/transportation/vehicle-essentials-194951](https://assetstore.unity.com/packages/audio/sound-fx/transportation/vehicle-essentials-194951)

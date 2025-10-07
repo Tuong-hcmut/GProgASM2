@@ -72,8 +72,6 @@ You can also modify the boost collectible prefab or arena layout directly in the
 
 ## References
 
-## Credit
-
 - **Background (Main Menu):** “Gradient Football Field Background”  
   Original author: Freepik  
   Source: [https://www.freepik.com/free-vector/gradient-football-field-background_15510117.htm](https://www.freepik.com/free-vector/gradient-football-field-background_15510117.htm)
